@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ridex - Create Profile</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #007BFF, #6DD5FA, #FFFFFF);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #007BFF;
+            margin-bottom: 20px;
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 600;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        input, select {
+            padding: 12px;
+            font-size: 1em;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px;
+            font-size: 1.1em;
+            background: linear-gradient(135deg, #007BFF, #0056b3);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #0056b3, #004085);
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ridex - Create Your Profile</h1>
+        <form id="profileForm">
+            <!-- Full Name -->
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <!-- Email -->
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <!-- Contact Number -->
+            <label for="phone">Contact Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your contact number" required>
+
+            <!-- Preferred Car Type -->
+            <label for="carType">Preferred Car Type</label>
+            <select id="carType" name="carType" required>
+                <option value="">-- Select Car Type --</option>
+                <option value="Economy">Economy</option>
+                <option value="Compact">Compact</option>
+                <option value="SUV">SUV</option>
+                <option value="Luxury">Luxury</option>
+            </select>
+
+            <!-- Submit Button -->
+            <button type="submit">Create Profile</button>
+            
+            <!-- Success Message -->
+            <div id="successMessage" class="success-message">
+                Profile created successfully!
+            </div>
+        </form>
+        <footer>
+            &copy; 2024 Ridex Car Rentals. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript for form validation and success message
+        document.getElementById("profileForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const carType = document.getElementById("carType").value;
+
+            // Basic validation (can be expanded as needed)
+            if (name && email && phone && carType) {
+                // Display success message
+                document.getElementById("successMessage").style.display = "block";
+
+                // Reset form after 2 seconds
+                setTimeout(() => {
+                    document.getElementById("profileForm").reset();
+                    document.getElementById("successMessage").style.display = "none";
+                }, 2000);
+            } else {
+                alert("Please fill out all fields correctly.");
+            }
+        });
+    </script>
+</body>
+</html>
+

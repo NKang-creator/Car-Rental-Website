@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadillac Escalade Rental</title>
+    <!-- Styles -->
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #0078D7;
+            color: #fff;
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .car-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .car-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+        }
+
+        .car-info {
+            flex: 1;
+        }
+
+        .car-info h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #000000;
+        }
+
+        .car-info p {
+            margin: 0.5rem 0;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .rent-now-btn {
+            display: inline-block;
+            background-color: #0078D7;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .rent-now-btn:hover {
+            background-color: #005fa3;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            margin-top: 2rem;
+        }
+
+        .gallery h3 {
+            margin-bottom: 1rem;
+            color: #000000;
+        }
+
+        .gallery-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .gallery-images img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .gallery-images img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0078D7;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Car Details</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Car Details -->
+            <section class="car-details">
+                <div class="car-image">
+                    <img src="pcs/escmain.avif" alt="Cadillac Escalade">
+                </div>
+                <div class="car-info">
+                    <h2>Cadillac Escalade</h2>
+                    <p><strong>Category:</strong> Full-Size Luxury SUV</p>
+                    <p><strong>Seats:</strong> 7</p>
+                    <p><strong>Fuel Efficiency:</strong> 14 MPG City / 19 MPG Highway</p>
+                    <p><strong>Price:</strong> $150/day</p>
+                    <a href="#" class="rent-now-btn" onclick="rentCar()">Rent Now</a>
+                </div>
+            </section>
+
+            <!-- Image Gallery -->
+            <section class="gallery" id="gallery">
+                <h3>Car Gallery</h3>
+                <div class="gallery-images">
+                    <img src="pcs/escfront.avif" alt="Cadillac Escalade Front View">
+                    <img src="pcs/escback.avif" alt="Cadillac Escalade Interior">
+                    <img src="pcs/escback.avif" alt="Cadillac Escalade Rear View">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>Contact us at: <a href="mailto:info@rentalcars.com">info@ridex.com</a></p>
+        <p>&copy; Ridex Rentals. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function rentCar() {
+            alert("Thank you for choosing the Cadillac Escalade! A representative will contact you shortly.");
+        }
+    </script>
+</body>
+</html>
